@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meenu Krishna J - Business Consultant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gold: #c5a073;
+            --bg-dark: #121212;
+            --card-bg: rgba(30, 30, 30, 0.85);
+            --text-light: #ffffff;
+            --text-gray: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container with Background Image */
+        .profile-container {
+            width: 100%;
+            max-width: 550px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
+                        url('1000311308.jpg'); /* Using your second image */
+            background-size: cover;
+            background-position: top center;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            position: relative;
+            padding: 30px 30px;
+        }
+
+        /* Header / Logo Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-circle {
+            background: var(--primary-gold);
+            color: #222;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .menu-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Text Section */
+        .intro {
+            margin-bottom: 30px;
+        }
+
+        .intro span {
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            border-bottom: 1px solid var(--primary-gold);
+            padding-bottom: 5px;
+        }
+
+        .intro h1 {
+            font-size: 3rem;
+            margin: 15px 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .badge {
+            background: var(--primary-gold);
+            color: #222;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            gap: 8px;
+        }
+
+        .tagline {
+            margin-top: 20px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            font-size: 1rem;
+            max-width: 80%;
+        }
+
+        /* Links and About Grid */
+        .content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .link-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.2s;
+        }
+
+        .link-card:hover {
+            transform: scale(1.02);
+        }
+
+        .icon-box {
+            background: #2a2a2a;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-gold);
+        }
+
+        .link-info {
+            flex-grow: 1;
+        }
+
+        .link-info h4 { font-size: 1rem; margin-bottom: 2px; }
+        .link-info p { font-size: 0.75rem; color: var(--text-gray); }
+
+        /* About Section */
+        .about-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .about-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+        }
+
+        .about-card p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist i {
+            color: var(--primary-gold);
+            font-size: 0.8rem;
+        }
+
+        /* Footer Quote */
+        .footer-quote {
+            background: var(--primary-gold);
+            color: #222;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 500;
+        }
+
+        .footer-quote i { font-size: 1.5rem; opacity: 0.7; }
+        
+        /* Page Fade In */
+body {
+    animation: pageFade 1s ease-in-out;
+}
+
+@keyframes pageFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Floating Background Effect */
+.profile-container {
+    animation: floatBg 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatBg {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-8px); }
+}
+
+/* Stagger Animation */
+.intro, .link-card, .about-card, .footer-quote {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.intro { animation-delay: 0.2s; }
+.link-card:nth-child(1) { animation-delay: 0.4s; }
+.link-card:nth-child(2) { animation-delay: 0.6s; }
+.link-card:nth-child(3) { animation-delay: 0.8s; }
+.about-card { animation-delay: 1s; }
+.footer-quote { animation-delay: 1.2s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Hover Upgrade */
+.link-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.link-card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+    top: 0;
+    left: -100%;
+    transition: 0.5s;
+}
+
+.link-card:hover::after {
+    left: 100%;
+}
+
+.link-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Icon Pulse */
+.icon-box i {
+    transition: transform 0.3s;
+}
+
+.link-card:hover .icon-box i {
+    transform: scale(1.2);
+}
+
+/* Quote Glow */
+.footer-quote {
+    transition: 0.3s;
+}
+
+.footer-quote:hover {
+    box-shadow: 0 0 20px rgba(197,160,115,0.6);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablet */
+@media (min-width: 768px) {
+    body {
+        align-items: center;
+    }
+
+    .profile-container {
+        max-width: 700px;
+        padding: 40px;
+        border-radius: 30px;
+    }
+
+    .intro h1 {
+        font-size: 3.5rem;
+    }
+
+    .tagline {
+        max-width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    body {
+        padding: 60px;
+        align-items: center;
+    }
+
+    .profile-container {
+        max-width: 1200px;
+        min-height: 700px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 20px 60px;
+        padding: 60px;
+        border-radius: 40px;
+
+        background-position: right center;
+    }
+
+    /* Header stays top */
+    .header {
+        grid-column: span 2;
+    }
+
+    /* LEFT SIDE */
+    .intro {
+        grid-column: 1;
+        margin-top: 40px;
+    }
+
+    .intro h1 {
+        font-size: 4.5rem;
+        line-height: 1.1;
+    }
+
+    .tagline {
+        max-width: 500px;
+        font-size: 1.1rem;
+    }
+
+    /* RIGHT SIDE */
+    .content-grid {
+        grid-column: 2;
+        margin-top: 40px;
+    }
+
+    .link-card {
+        padding: 18px;
+    }
+
+    /* About stays inside right */
+    .about-card {
+        margin-top: 10px;
+    }
+
+    /* Footer full width bottom */
+    .footer-quote {
+        grid-column: span 2;
+        margin-top: 30px;
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    
+    <div class="intro">
+        <span>Hello, I'm</span>
+        <h1>Meenu Krishna J</h1>
+        <div class="badge">
+            <i class="fas fa-briefcase"></i> Business Consultant
+        </div>
+        <p class="tagline">Turning ideas into scalable digital products with clarity, structure, and direction.</p>
+    </div>
+
+    <div class="content-grid">
+        <a href="https://www.linkedin.com/in/meenukrishnaa/" target="_blank" class="link-card">
+            <div class="icon-box"><i class="fab fa-linkedin-in"></i></div>
+            <div class="link-info">
+                <h4>LinkedIn</h4>
+                <p>Connect with me</p>
+            </div>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+       <a href="https://api.whatsapp.com/send/?phone=%2B917012551780&text&type=phone_number&app_absent=0" target="_blank" class="link-card">
+            <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+            <div class="link-info">
+                <h4>WhatsApp</h4>
+                <p>Chat with me</p>
+            </div>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+       <a href="https://zybo.in/" target="_blank" rel="noopener noreferrer" class="link-card small">
+        <div class="icon-box"><i class="fas fa-globe"></i></div>
+        <div class="link-info">
+            <h4>Zybo</h4>
+        </div>
+        <i class="fas fa-arrow-right"></i>
+        </a>
+    
+        <a href="https://drive.google.com/file/d/1GstSST0KQ7K3oo69TUe1kpL5vz6qJHix/view" target="_blank" class="link-card small">
+            <div class="icon-box"><i class="fas fa-folder-open"></i></div>
+            <div class="link-info">
+                <h4>Zybo Portfolio</h4>
+            </div>
+             <i class="fas fa-arrow-right"></i>
+        </a>
+
+        <div class="about-card">
+            <div class="about-header">
+                <i class="fas fa-user-circle"></i>
+                <h3>About Me</h3>
+            </div>
+            <p>I help businesses and startups turn complex ideas into user-centric digital products. From strategy to execution, I bring clarity and structure to drive measurable growth.</p>
+            <ul class="checklist">
+                <li><i class="far fa-check-circle"></i> Business Strategy</li>
+                <li><i class="far fa-check-circle"></i> Product Planning</li>
+                <li><i class="far fa-check-circle"></i> Digital Growth</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-quote">
+        <i class="fas fa-quote-left"></i>
+        <p>Great ideas need clarity. I build both.</p>
+    </div>
+</div>
+
+</body>
+</html>
+
